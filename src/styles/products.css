@@ -1,10 +1,30 @@
 .products-container{
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.filter{
+  margin-bottom: 50px;
+  width: 15%;
+  height: 3vh;
+  border-radius: 4px;
+}
+
+.filter-value{
+  width: 100%;
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter-value > p{
+  margin-left: 5px;
+  margin-right: 30px;
 }
 
 .title{
