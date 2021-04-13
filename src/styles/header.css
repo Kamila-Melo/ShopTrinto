@@ -3,11 +3,21 @@
   height: 80px;
   background: #993399;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 }
 
 .header-title{
-  font-size: 40px;
+  width: 60%;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  margin-right: 20px;
+}
+
+.header-title > h1{
+  font-size: 48px;
   color: #FFF;
 }
