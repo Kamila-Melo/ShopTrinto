@@ -28,7 +28,7 @@
 }
 
 .title{
-  width: 60%;
+  width: 90%;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -42,7 +42,7 @@
 }
 
 .products{
-  width: 60%;
+  width: 90%;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -54,6 +54,6 @@
   width: 12%;
 }
 
-.products > a{
+.products > button{
   width: 12%;
 }
