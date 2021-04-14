@@ -1,15 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
 import '../../styles/products.css'
+import {CartContext} from '../../contexts/CartContext'
 
 function Products(){
 
   const [products, setProducts] = useState([]);
   const [currency, setCurrency] = useState();
   const [select, setSelect] = useState('allProducts');
-  const [radioButton, setRadioButton] = useState('allValue')
+  const [radioButton, setRadioButton] = useState('allValue');
+ 
+  const {add} =useContext(CartContext);
 
-  
   async function getProducts(){
     const response = await axios.get('https://www.trinto.com.br/testes/frontendjr/index.php')
     setProducts(response.data.products)
@@ -67,7 +69,7 @@ function Products(){
               <p>{product.brand === null ? '-' : product.brand}</p>
               <p>{currency} {product.price.toFixed(2)}</p>
               <p>{product.hasStock ? 'Sim' : 'Não'}</p>
-              <a href=''>Comprar</a>
+              <button onClick={() => add(product, currency)}>Comprar</button>
             </div>
           );
         })
@@ -79,7 +81,7 @@ function Products(){
               <p>{product.brand === null ? '-' : product.brand}</p>
               <p>{currency} {product.price.toFixed(2)}</p>
               <p>{product.hasStock ? 'Sim' : 'Não'}</p>
-              <p>Comprar</p>
+              <button onClick={() => add(product, currency)}>Comprar</button>
             </div>
           );
         })
