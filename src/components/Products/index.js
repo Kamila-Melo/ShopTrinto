@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
 import '../../styles/products.css'
 import {CartContext} from '../../contexts/CartContext'
+import Button from '@material-ui/core/Button';
 
 function Products(){
 
@@ -69,7 +70,13 @@ function Products(){
               <p>{product.brand === null ? '-' : product.brand}</p>
               <p>{currency} {product.price.toFixed(2)}</p>
               <p>{product.hasStock ? 'Sim' : 'Não'}</p>
-              <button onClick={() => add(product, currency)}>Comprar</button>
+              <Button 
+                variant="contained"
+                color="primary"
+                onClick={() => add(product, currency)}
+              >
+                Comprar
+              </Button>
             </div>
           );
         })
@@ -81,7 +88,13 @@ function Products(){
               <p>{product.brand === null ? '-' : product.brand}</p>
               <p>{currency} {product.price.toFixed(2)}</p>
               <p>{product.hasStock ? 'Sim' : 'Não'}</p>
-              <button onClick={() => add(product, currency)}>Comprar</button>
+              <Button 
+                variant="contained"
+                color="primary"
+                onClick={() => add(product)}
+              >
+                Comprar
+              </Button>
             </div>
           );
         })
