@@ -21,7 +21,7 @@
   border-radius: 1rem;
   box-shadow: 0 0 3rem rgb(0 0 0);
   transition: opacity 0.5s linear !important;
-  margin-right: 50px;
+  margin-right: 10px;
 }
 
 .close {
@@ -42,9 +42,39 @@
 }
 
 .shopping-info{
+  height: 10vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   padding: 10px;
+  border-bottom: 1px solid #000;
+}
+
+.shopping-info > span{
+  font-size: 24px;
+}
+
+.shopping{
+  height:40vh;
+  overflow: auto;
+}
+
+.shopping-item{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.shopping-item > p{
+  font-weight: 700;
+}
+
+.clear-cart{
+  height: 20vh;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

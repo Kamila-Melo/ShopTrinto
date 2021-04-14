@@ -12,6 +12,7 @@ export function CartProvider({children}) {
  
   const [cart, setCart] = useState(cartFromLocalStorage);
   const [totalValue, setTotalValue] = useState();
+  const [currency, setCurrency] = useState();
 
   useEffect(() => {
     let value = 0
@@ -26,11 +27,12 @@ export function CartProvider({children}) {
     localStorage.setItem('cart', JSON.stringify(cart))
   }, [cart])
 
-  function add(item){
+  function add(item, curr){
     const newCart = cart;
     newCart.push(item);
     
     setCart([...newCart])
+    setCurrency(curr)
 
     alert('Produto adicionado ao carrinho')
   }
@@ -50,7 +52,8 @@ export function CartProvider({children}) {
     cart,
     totalValue,
     remove,
-    clearCart
+    clearCart,
+    currency
   }
  
   return (

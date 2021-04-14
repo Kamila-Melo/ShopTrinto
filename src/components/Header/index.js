@@ -15,10 +15,10 @@ function Header(){
     <div className='header-container'>
       <div className='header-title'>
         <h1>ShopTrinto</h1>
-      <ShoppingCartIcon
-        fontSize='large'
-        onClick={modalVisible}
-      />
+        <ShoppingCartIcon
+          fontSize='large'
+          onClick={modalVisible}
+        />
       </div>
       {isModalVisible && (
         <Cart
