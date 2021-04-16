@@ -6,11 +6,13 @@ export function useCartContext() {
   return useContext(CartContext);
 }
 
+
 const cartFromLocalStorage = JSON.parse(localStorage.getItem('cart'))
+
 
 export function CartProvider({children}) {
  
-  const [cart, setCart] = useState(cartFromLocalStorage);
+  const [cart, setCart] = useState(() => {return cartFromLocalStorage || []});
   const [totalValue, setTotalValue] = useState();
   const [currency, setCurrency] = useState();
 
@@ -24,16 +26,12 @@ export function CartProvider({children}) {
   }, [cart])
   
   useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cart))
+    localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart])
 
   function add(item, curr){
-    const newCart = cart;
-    newCart.push(item);
-    
-    setCart([...newCart])
+    setCart(prevCart => [...prevCart, item])
     setCurrency(curr)
-
     alert('Produto adicionado ao carrinho')
   }
 
