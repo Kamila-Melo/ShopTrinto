@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import ButtonClose from '../../images/fecharbotao.svg'
 import '../../styles/cart.css';
 import {CartContext} from '../../contexts/CartContext';
